@@ -1,0 +1,29 @@
+// Roles de usuario
+const USER_ROLES = {
+  CLIENTE: 'CLIENTE',
+  ADMIN: 'ADMIN',
+};
+
+// Status de pedido
+const ORDER_STATUS = {
+  PENDENTE: 'PENDENTE',
+  EM_PREPARO: 'EM_PREPARO',
+  PRONTO: 'PRONTO',
+  ENTREGUE: 'ENTREGUE',
+  CANCELADO: 'CANCELADO',
+};
+
+// Transicoes de status validas
+const VALID_STATUS_TRANSITIONS = {
+  PENDENTE: ['EM_PREPARO', 'CANCELADO'],
+  EM_PREPARO: ['PRONTO', 'CANCELADO'],
+  PRONTO: ['ENTREGUE'],
+  ENTREGUE: [],
+  CANCELADO: [],
+};
+
+module.exports = {
+  USER_ROLES,
+  ORDER_STATUS,
+  VALID_STATUS_TRANSITIONS,
+};
